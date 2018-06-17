@@ -1,0 +1,37 @@
+﻿@using ClassLibrary1.Model.Entities
+@model Produit
+@{
+    ViewBag.Title = "Details produits";
+}
+<h2>Details</h2>
+
+<html>
+
+<body>
+    <h2>Liste produits</h2>
+
+    <table class="table">
+        <thread>
+            <tr>
+                <td>Libélé</td>
+                <td>Code</td>
+                <td>Description</td>
+                <td>Stock</td>
+                <td>Categorie</td>
+
+            </tr>
+        </thread>
+        <tbody>
+                <tr>
+                    <td>@Model.ProduitLibele</td>
+                    <td>@Model.ProduitCode</td>
+                    <td>@Model.ProduitDescription</td>
+                    <td>@Model.ProduitStock</td>
+                    <td>@Model.CategorieId</td>
+                </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

@@ -18,6 +18,21 @@ namespace ASP_project
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+            name: "Produits",
+            url: "{controller}/{action}/{id}",
+            defaults: new { controller = "Produits", action = "Liste", id = UrlParameter.Optional }
+        );
+            routes.MapRoute(
+            name: "Details",
+            url: "{controller}/{action}/{id}",
+            defaults: new { controller = "Produits", action = "Details", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+            name: "Adding",
+            url: "{controller}/{action}/{id}",
+            defaults: new { controller = "Produits", action = "Adding", id = UrlParameter.Optional }
+            );
         }
     }
 }

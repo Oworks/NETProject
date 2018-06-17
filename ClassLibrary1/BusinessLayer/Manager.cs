@@ -46,5 +46,11 @@ namespace ClassLibrary1.BusinessLayer
         {
             return _contexte.Produits.Where(p => p.ProduitLibele.ToUpper().Contains(code.ToUpper())).ToList();
         }
+
+        public Produit GetProduitById(int id)
+        {
+            return _contexte.Produits.Where(p => p.IdProduit==id).FirstOrDefault();
+        }
+
     }
 }
