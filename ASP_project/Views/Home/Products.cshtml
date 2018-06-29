@@ -1,0 +1,22 @@
+﻿@using ClassLibrary1.Model.Entities
+@model List<Produit>
+@{
+    ViewBag.Title = "Products";
+}
+
+<h2>5 produits les plus vendus</h2>
+<table class="table">
+    <thread>
+        <tr>
+            <td>Libélé</td>
+        </tr>
+    </thread>
+    <tbody>
+        @foreach (var produit in Model)
+        {
+            <tr>
+                <td><a href="@Url.Action("Details", "Produits", new {id=produit.IdProduit})">@produit.ProduitLibele</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

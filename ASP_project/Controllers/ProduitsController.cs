@@ -24,5 +24,30 @@ namespace ASP_project.Controllers
             List<Produit> produit = Manager.Instance().GetListeProduitByCode(filter);
             return View("Liste", produit);
         }
+
+        public ActionResult AddProduits()
+        {
+            return View("FormProduit");
+        }
+
+        [HttpPost]
+        public ActionResult AddProduits(Produit prod)
+        {
+            Produit produit = Manager.Instance().AddProduit(prod);
+            return RedirectToAction("Liste");
+        }
+
+        public ActionResult ChangeProduits(int id)
+        {
+            Produit p = Manager.Instance().GetProduitById(id);
+            return View("FormProduit", p);
+        }
+
+        [HttpPost]
+        public ActionResult ChangeProduits(Produit prod)
+        {
+            //Produit p = Manager.Instance().EditProduit(id);
+            return RedirectToAction("Liste");
+        }
     }
 }

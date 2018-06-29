@@ -10,6 +10,7 @@ namespace ClassLibrary1.Model.Fluent
         public DbSet<Statut> Statuts { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Commande> Commandes { get; set; }
+        public DbSet<CommandeProduit> CommandeProduits { get; set; }
         public DbSet<Produit> Produits { get; set; }
 
         public ContextFluent() : base("name=Database")

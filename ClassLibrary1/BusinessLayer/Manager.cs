@@ -52,5 +52,33 @@ namespace ClassLibrary1.BusinessLayer
             return _contexte.Produits.Where(p => p.IdProduit==id).FirstOrDefault();
         }
 
+        public Produit AddProduit(Produit produit)
+        {
+
+            _contexte.Produits.Add(produit);
+            _contexte.SaveChanges();
+            return produit;
+        }
+        public Produit EditProduit(Produit produit)
+        {
+            
+            return produit;
+        }
+        public void UpdateProduit(Produit produit)
+        {
+            _contexte.Produits.Where(p => p.IdProduit == produit.IdProduit).ToList().ForEach(p => { p.ProduitCode = produit.ProduitCode; p.ProduitLibele = produit.ProduitLibele; });
+        }
+
+        public List<Commande> GetLastOrders(int n)
+        {
+            return _contexte.Commandes.OrderByDescending(o => o.CommandeDate).Take(n).ToList();
+        }
+
+        public List<Produit> GetTrendyProducts(int n)
+        {
+            Console.WriteLine(_contexte.CommandeProduits.GroupBy(o => o.CommandeProduitID).ToList());
+            return null;
+
+        }
     }
 }

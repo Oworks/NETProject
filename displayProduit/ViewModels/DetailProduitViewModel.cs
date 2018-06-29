@@ -63,19 +63,6 @@ namespace displayProduit.ViewModels
         #region Commandes
 
         /// <summary>
-        /// Commande pour ouvrir la fenêtre pour ajouter une opération
-        /// </summary>
-        public ICommand UpdateOperation
-        {
-            get
-            {
-                if (_updateOperation == null)
-                    _updateOperation = new RelayCommand(() => this.ShowWindowOperation());
-                return _updateOperation;
-            }
-        }
-
-        /// <summary>
         /// Permet l'ouverture de la fenêtre
         /// </summary>
         //private void ShowWindowOperation()
@@ -89,5 +76,4 @@ namespace displayProduit.ViewModels
     }
 
 
-}
 }

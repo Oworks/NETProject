@@ -1,0 +1,22 @@
+﻿@using ClassLibrary1.Model.Entities
+@model List<Commande>
+@{
+    ViewBag.Title = "Orders";
+}
+
+<h2>5 dernières commandes</h2>
+<table class="table">
+    <thread>
+        <tr>
+            <td>Libélé</td>
+        </tr>
+    </thread>
+    <tbody>
+        @foreach (var commande in Model)
+        {
+            <tr>
+                <td>@commande.IdCommande</td>
+            </tr>
+        }
+    </tbody>
+</table>

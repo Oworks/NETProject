@@ -33,6 +33,11 @@ namespace ASP_project
             url: "{controller}/{action}/{id}",
             defaults: new { controller = "Produits", action = "Adding", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+            name: "AddProduit",
+            url: "{controller}/{action}",
+            defaults: new { controller = "Produits", action = "AddProduits", id = UrlParameter.Optional }
+            );
         }
     }
 }

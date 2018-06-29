@@ -13,7 +13,7 @@ namespace ConsoleApp1
         {
             try{
                 ContextFluent context = new ContextFluent();
-                context.Clients.ToList();
+                context.SaveChanges();
             }
             catch (Exception e)
             {

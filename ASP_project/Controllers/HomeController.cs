@@ -12,7 +12,8 @@ namespace ASP_project.Controllers
     {
         public ActionResult Index()
         {
-            List<Produit> listeProduit = Manager.Instance().GetListeProduit();
+            List<Produit> listeProduit = Manager.Instance().GetTrendyProducts(5);
+            Console.Write(listeProduit);
             return View(listeProduit);
         }
 

@@ -3,10 +3,6 @@
 @{
     ViewBag.Title = "Liste";
 }
-
-<html>
-
-<body>
     <h2>Liste produits</h2>
     <form class="navbar-form navbar-left" role="search" action="@Url.Action("Search", "Produits")" method="get">
         <div class="form-group">
@@ -17,21 +13,23 @@
         </button>
     </form>
     <table class="table">
-        <thread>
+        <thead>
             <tr>
-                <td>Libélé</td>
+                <th>Libélé</th>
+                <th>Action</th>
             </tr>
-        </thread>
+        </thead>
         <tbody>
             @foreach (var produit in Model)
             {
                 <tr>
                     <td><a href="@Url.Action("Details", "Produits", new {id=produit.IdProduit})">@produit.ProduitLibele</a></td>
+                    <td><a href="@Url.Action("ChangeProduits", "Produits", new { id = produit.IdProduit })" class="btn">Modifier un produit</a></td>
                 </tr>
             }
-            </tbody>
-        </table>
+        </tbody>
+    </table>
+    <a href="@Url.Action("AddProduits", "Produits")" class="btn">Ajouter un produit</a>
 
-    </body>
 
-</html>
+
